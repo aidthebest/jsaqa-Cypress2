@@ -3,3 +3,5 @@ Cypress.Commands.add("login", () => {
   cy.get('[for="pwd"] > .login__input').type("qamid");
   cy.get(".login__button").click();
 });
+
+import "cypress-file-upload";
