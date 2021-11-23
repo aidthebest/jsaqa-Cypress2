@@ -16,5 +16,11 @@
 // Import commands.js using ES2015 syntax:
 import "./commands";
 
+// afterAll(() => {
+//     cy.get(".conf-step__list > :nth-child(3) > a > .conf-step__button");
+//     cy.contains("top2hall");
+//   });
+// afterAll(() => {});
+
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
