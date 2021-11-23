@@ -4,7 +4,7 @@ context("createSuccesfull", () => {
     cy.login();
   });
 
-  it("Should create new hall", () => {
+  it.only("Should create new hall", () => {
     cy.get(".conf-step__wrapper > :nth-child(3) > .conf-step__button").click();
     cy.get("form > .conf-step__label > .conf-step__input").type("top2Hall");
     cy.get("form > .conf-step__buttons > .conf-step__button-accent").click();
