@@ -16,15 +16,10 @@
 // Import commands.js using ES2015 syntax:
 import "./commands";
 
-// after(() => {
-//   cy.get('[class="conf-step__wrapper"]')
-//     .contains("top2Hall")
-//     // .contains([button])
-//     .click({
-//       force: true,
-//     });
-// });
-// afterAll(() => {});
+after(() => {
+  cy.get('[data-hall-name="top2Hall"]').click();
+  cy.get("form > .conf-step__buttons > .conf-step__button-accent").click();
+});
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
