@@ -26,25 +26,10 @@ it.only("Should create new hall", () => {
     return false;
   });
 
-  // const dataTransfer = new DataTransfer();
-  // cy.get('[class="conf-step__movies"]')
-  //   .contains("Фильм 1")
-  //   .trigger("dragstart", {
-  //     dataTransfer,
-  //   });
-  // cy.get('[data-hall-id="173"] > .conf-step__seances-timeline').trigger(
-  //   "drop",
-  //   { dataTransfer }
-  // );
-  // cy.get('[class="conf-step__movies"]').contains("Фильм 1").trigger("dragend");
+  cy.get(
+    '[draggable="true"][data-film-id="80"] > .conf-step__movie-title'
+  ).drag('[data-hall-id="173"] > .conf-step__seances-timeline');
 
-  // cy.contains("Фильм 1").drag(
-  //   '.data-hall-id="497" > .conf-step__seances-timeline'
-  // );
-  // Cypress.on("uncaught:exception", () => {
-  //   return false;
-  // });
-  // cy.wait(1000);
   // cy.get('[for="name"] > .conf-step__input')
   //   .clear()
   //   .type(12 - 30);
@@ -56,12 +41,6 @@ it.only("Should create new hall", () => {
   // cy.contains('[class="conf-step__selector"]', hall).click({
   //   force: true,
   // });
-
-  // cy.contains("#price-configuration > .conf-step__wrapper", "top2Hall")
-  //   .contains(hall)
-  //   .click({
-  //     force: true,
-  //   });
 
   // cy.contains('#start-sales > [style="display: block;"]', hall)
   //   .contains(hall)
