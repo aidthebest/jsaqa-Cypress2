@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dash": "cypress run --record --key e12bd371-7af3-4e67-b0cd-a11ad6d50db4",
     "test": "test"
   },
   "author": "AM",
