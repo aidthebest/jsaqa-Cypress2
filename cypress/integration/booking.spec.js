@@ -6,5 +6,8 @@ it("Should show correct main page", () => {
 it("Should show correct admin panel page", () => {
   cy.visit("http://qamid.tmweb.ru/admin/");
   cy.login();
-  cy.get(".page-header__title").should("be.visible");
+  Cypress.on("uncaught:exception", () => {
+    return false;
+  });
+  cy.contains("Управление").should("be.visible");
 });

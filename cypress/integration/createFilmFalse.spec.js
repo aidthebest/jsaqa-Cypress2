@@ -7,7 +7,7 @@
 it("Should create new hall", () => {
   cy.visit("http://qamid.tmweb.ru/admin/");
   cy.login();
-  cy.get(".conf-step__wrapper > :nth-child(3) > .conf-step__button").click();
+  cy.contains("Создать зал").click();
   cy.get("form > .conf-step__label > .conf-step__input").type("topHall");
   cy.get("form > .conf-step__buttons > .conf-step__button-accent").click();
   cy.get(".conf-step__list > :nth-child(1)").should("be.visible");

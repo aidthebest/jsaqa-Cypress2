@@ -5,6 +5,11 @@
   "main": "index.js",
   "scripts": {
     "dash": "cypress run --record --key e12bd371-7af3-4e67-b0cd-a11ad6d50db4",
+    "bookSpec": "cypress run --spec 'cypress/integration/booking.spec.js' --record --key e12bd371-7af3-4e67-b0cd-a11ad6d50db4",
+    "createSucFilm": "cypress run --spec 'cypress/integration/createSuccesfull.spec.js' --record --key e12bd371-7af3-4e67-b0cd-a11ad6d50db4",
+    "createFalseFilm": "cypress run --spec 'cypress/integration/createFilmFalse.spec.js' --record --key e12bd371-7af3-4e67-b0cd-a11ad6d50db4",
+    "emptySpec": "cypress run --spec 'cypress/integration/ticketToBook.spec.js' --record --key e12bd371-7af3-4e67-b0cd-a11ad6d50db4",
+    "parall": "npm run bookSpec -- --browser chrome --group Spec1 --ci-build-id 5 & npm run createSucFilm -- --browser chrome --group Spec2 --ci-build-id 5 & npm run createFalseFilm -- --browser chrome --group Spec3 --ci-build-id 5 & npm run emptySpec -- --browser chrome --group Spec4 --ci-build-id 5",
     "test": "test"
   },
   "author": "AM",
