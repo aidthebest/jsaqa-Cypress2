@@ -7,20 +7,25 @@
 it.only("Should create new hall", () => {
   cy.visit("http://qamid.tmweb.ru/admin/");
   cy.login();
+  const selector = require("../../fixtures/selectors.json");
+  const seats = require("../../fixtures/seats.json");
+  const prices = require("../../fixtures/prices.json");
+  const testData = require("../../fixtures/testData.json");
+
   cy.contains("Создать зал").click();
-  cy.get("form > .conf-step__label > .conf-step__input").type("top2Hall");
-  cy.get("form > .conf-step__buttons > .conf-step__button-accent").click();
+  cy.get(selector.hallNameField).type(testData.newHallallName);
+  cy.get(selector.confHallButton).click();
   cy.get('[value="top2Hall"]').click({ multiple: true });
-  cy.get("#input_rows_count").clear().type(7);
-  cy.get("#input_places_count").clear().type(5);
-  cy.get(
-    "#hall-configuration > .conf-step__wrapper > .conf-step__buttons > .conf-step__button-accent"
-  ).click();
-  cy.get("#input_price_standart").clear().type(400);
-  cy.get("#input_price_vip").clear().type(700);
-  cy.get(
-    "#price-configuration > .conf-step__wrapper > .conf-step__buttons > .conf-step__button-accent"
-  ).click();
+  seats.forEach((seat) => {
+    cy.get("#input_rows_count").clear().type(seat.rows);
+    cy.get("#input_places_count").clear().type(seat.seats);
+  });
+  cy.get(selector.hallConfConfirmButton).click();
+  prices.forEach((price) => {
+    cy.get("#input_price_standart").clear().type(price.standart);
+    cy.get("#input_price_vip").clear().type(price.vip);
+  });
+  cy.get(selector.priceConfConfirmButton).click();
   cy.contains("top2Hall").should("be.visible");
   Cypress.on("uncaught:exception", () => {
     return false;

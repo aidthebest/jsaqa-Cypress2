@@ -1,0 +1,6 @@
+{
+  "hallNameField": "form > .conf-step__label > .conf-step__input",
+  "confHallButton": "form > .conf-step__buttons > .conf-step__button-accent",
+  "hallConfConfirmButton": "#hall-configuration > .conf-step__wrapper > .conf-step__buttons > .conf-step__button-accent",
+  "priceConfConfirmButton": "#price-configuration > .conf-step__wrapper > .conf-step__buttons > .conf-step__button-accent"
+}

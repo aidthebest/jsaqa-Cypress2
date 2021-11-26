@@ -4,7 +4,7 @@ Cypress.Commands.add("login", () => {
   cy.get(".login__button").click();
 });
 
-require("@4tw/cypress-drag-drop");
+// require("@4tw/cypress-drag-drop");
 
-import "cypress-file-upload";
+// import "cypress-file-upload";
 import "@4tw/cypress-drag-drop";
