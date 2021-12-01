@@ -12,6 +12,7 @@
     "parallChrome": "npm run bookSpec -- --browser chrome --group Spec1 --ci-build-id 5 & npm run createSucFilm -- --browser chrome --group Spec2 --ci-build-id 5 & npm run createFalseFilm -- --browser chrome --group Spec3 --ci-build-id 5 & npm run emptySpec -- --browser chrome --group Spec4 --ci-build-id 5",
     "parallElectron": "npm run bookSpec -- --group Spec1 --ci-build-id 5 & npm run createSucFilm -- --group Spec2 --ci-build-id 5 & npm run createFalseFilm -- --group Spec3 --ci-build-id 5 & npm run emptySpec -- --group Spec4 --ci-build-id 5",
     "parallFF": "npm run bookSpec -- --browser firefox --group Spec1 --ci-build-id 5 & npm run createSucFilm -- --browser firefox --group Spec2 --ci-build-id 5 & npm run createFalseFilm -- --browser firefox --group Spec3 --ci-build-id 5 & npm run emptySpec -- --browser firefox --group Spec4 --ci-build-id 5",
+    "parallFolder": "npm run bookSpec -- --browser chrome --group Sp1 --ci-build-id 4 & npm run emptySpec -- --browser chrome --group Sp1 --ci-build-id 4 & npm run createSucFilm -- --browser firefox --group Sp2 --ci-build-id 4 & npm run createFalseFilm -- --browser firefox --group Sp2 --ci-build-id 4",
     "test": "test"
   },
   "author": "AM",

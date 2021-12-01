@@ -4,7 +4,7 @@
 //     cy.login();
 //   });
 
-it.only("Should create new hall", () => {
+it("Should create new hall", () => {
   cy.visit("http://qamid.tmweb.ru/admin/");
   cy.login();
   const selector = require("../../fixtures/selectors.json");
@@ -31,9 +31,9 @@ it.only("Should create new hall", () => {
     return false;
   });
 
-  cy.get(
-    '[draggable="true"][data-film-id="80"] > .conf-step__movie-title'
-  ).drag('[data-hall-id="173"] > .conf-step__seances-timeline');
+  // cy.get(
+  //   '[draggable="true"][data-film-id="80"] > .conf-step__movie-title'
+  // ).drag('[data-hall-id="173"] > .conf-step__seances-timeline');
 
   // cy.get('[for="name"] > .conf-step__input')
   //   .clear()
