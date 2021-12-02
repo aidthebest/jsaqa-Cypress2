@@ -16,7 +16,7 @@
 // Import commands.js using ES2015 syntax:
 import "./commands";
 
-// after(() => {
+// afterEach(() => {
 //   cy.get('[data-hall-name="top2Hall"]').click();
 //   cy.get("form > .conf-step__buttons > .conf-step__button-accent").click();
 // });

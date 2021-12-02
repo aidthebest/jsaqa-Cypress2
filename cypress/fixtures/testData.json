@@ -1,3 +1,5 @@
 {
-  "newHallallName": "top2Hall"
+  "newHallallName": "top2Hall",
+  "urlToGo": "http://qamid.tmweb.ru/admin/",
+  "clientUrl": "http://qamid.tmweb.ru/client/index.php"
 }

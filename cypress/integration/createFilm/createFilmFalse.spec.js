@@ -1,40 +1,19 @@
-// context("Create", () => {
-//   beforeEach(() => {
-//     cy.visit("http://qamid.tmweb.ru/admin/");
-//     cy.login();
-//   });
+const selector = require("../../fixtures/selectors.json");
+const seats = require("../../fixtures/seats.json");
+const prices = require("../../fixtures/prices.json");
+const testData = require("../../fixtures/testData.json");
 
-it.only("Create film fals", () => {
-  cy.visit("http://qamid.tmweb.ru/admin/");
+it("Create film fals", () => {
+  cy.visit(testData.urlToGo);
   cy.login();
-  // cy.contains("Создать зал").click();
-  // cy.get("form > .conf-step__label > .conf-step__input").type("top2Hall");
-  // cy.get("form > .conf-step__buttons > .conf-step__button-accent").click();
-  // cy.get('[value="top2Hall"]').click({ multiple: true });
-  // cy.get("#input_rows_count").clear().type(7);
-  // cy.get("#input_places_count").clear().type(5);
-  // cy.get("#input_price_standart").clear().type(400);
-  // cy.get("#input_price_vip").clear().type(700);
-  cy.get(".conf-step__paragraph > a > .conf-step__button").click();
-  cy.get(".popup__form > :nth-child(1) > .conf-step__input").type("newFilm");
-  cy.get(":nth-child(2) > .conf-step__input").type(190);
-  cy.get(".popup__form > :nth-child(3) > .conf-step__input").type("trash");
-  cy.get(":nth-child(4) > .conf-step__input").type("Poland");
 
-  // cy.get("form > .conf-step__buttons > :nth-child(2)").click();
+  cy.get(selector.addFilm).click();
+  cy.get(selector.filmName).type("newFilm");
+  cy.get(selector.filmTime).type(190);
+  cy.get(selector.filmType).type("trash");
+  cy.get(selector.filmCountry).type("Poland");
+
   const filepath = "../../cypress/fixtures/85.png";
-  cy.get('[value="Загрузить постер"]').click().attachFile(filepath);
-
-  // cy.get('[value="Загрузить постер"]').attachFile(filepath, {
-  //   subjectType: "drag-n-drop",
-  // });
-
-  // cy.get('[value="Загрузить постер"]')
-  //   .click()
-  //   .wait(500)
-  //   .attachFile(filepath, { subjectType: "drag-n-drop" });
-  // cy.get('[value="Добавить фильм"]').click();
-  // cy.get(".conf-step__list > :nth-child(1)").should("be.visible");
+  cy.get(selector.poster).click().attachFile(filepath);
   cy.contains("85").should("be.visible");
 });
-// });

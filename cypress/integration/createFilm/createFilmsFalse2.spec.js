@@ -3,16 +3,14 @@ const seats = require("../../fixtures/seats.json");
 const prices = require("../../fixtures/prices.json");
 const testData = require("../../fixtures/testData.json");
 
-it("Should show correct main page", () => {
-  cy.visit(testData.clientUrl);
-  cy.get(selector.mainTitle).should("be.visible");
-});
-
-it("Should show correct admin panel page", () => {
+it("Should be added to the schedule", () => {
   cy.visit(testData.urlToGo);
   cy.login();
+
+  cy.get(
+    '[draggable="true"][data-film-id="80"] > .conf-step__movie-title'
+  ).drag('[data-hall-id="71"] > .conf-step__seances-timeline');
   Cypress.on("uncaught:exception", () => {
     return false;
   });
-  cy.contains("Управление").should("be.visible");
 });
