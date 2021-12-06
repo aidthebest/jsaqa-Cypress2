@@ -4,7 +4,7 @@ const prices = require("../../fixtures/prices.json");
 const testData = require("../../fixtures/testData.json");
 
 it("Should create new hall", () => {
-  cy.visit(testData.urlToGo);
+  cy.visit(testData.adminUrl);
   cy.login();
   cy.createHall();
 

@@ -9,7 +9,7 @@ it("Should show correct main page", () => {
 });
 
 it("Should show correct admin panel page", () => {
-  cy.visit(testData.urlToGo);
+  cy.visit(testData.adminUrl);
   cy.login();
   Cypress.on("uncaught:exception", () => {
     return false;

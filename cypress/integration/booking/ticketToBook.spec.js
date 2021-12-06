@@ -4,7 +4,7 @@ const prices = require("../../fixtures/prices.json");
 const testData = require("../../fixtures/testData.json");
 
 it("Should enter new tickets price", () => {
-  cy.visit(testData.urlToGo);
+  cy.visit(testData.adminUrl);
   cy.login();
   cy.createHall();
   cy.get(selector.newHallCheck).click({ multiple: true, force: true });

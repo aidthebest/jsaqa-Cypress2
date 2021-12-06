@@ -4,7 +4,7 @@ const prices = require("../../fixtures/prices.json");
 const testData = require("../../fixtures/testData.json");
 
 it("Create film fals", () => {
-  cy.visit(testData.urlToGo);
+  cy.visit(testData.adminUrl);
   cy.login();
 
   cy.get(selector.addFilm).click();
